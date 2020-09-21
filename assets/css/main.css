@@ -362,11 +362,11 @@ hr.major {
 input,
 select,
 textarea {
-	color: #000000;
+	color: #17211A;
 }
 
 a {
-	color: #000000;
+	color: #17211A;
 }
 
 a:hover {
@@ -375,7 +375,7 @@ a:hover {
 
 strong,
 b {
-	color: #000000;
+	color: #17211A;
 }
 
 h1,
@@ -384,7 +384,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #000000;
+	color: #17211A;
 }
 
 blockquote {
@@ -788,7 +788,7 @@ button,
 	background-color: transparent;
 	-webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
-	color: #000000 !important;
+	color: #17211A !important;
 }
 
 input[type="submit"]:hover,
@@ -817,7 +817,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-	background-color: #000000;
+	background-color: #17211A;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	color: #ffffff !important;
@@ -1049,7 +1049,7 @@ input[type="radio"] + label:before {
 }
 
 label {
-	color: #000000;
+	color: #17211A;
 }
 
 input[type="text"],
@@ -1081,7 +1081,7 @@ select {
 }
 
 select option {
-	color: #000000;
+	color: #17211A;
 	background: #ffffff;
 }
 
@@ -1097,8 +1097,8 @@ input[type="radio"] + label:before {
 
 input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
-	background-color: #000000;
-	border-color: #000000;
+	background-color: #17211A;
+	border-color: #17211A;
 	color: #ffffff;
 }
 
@@ -1257,6 +1257,21 @@ a.icon.style2:active:before {
 
 .image.main img {
 	width: 100%;
+}
+
+.no-js img.lazyload {
+	display: none;
+}
+
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+
+.lazyloaded {
+	opacity: 1;
+	-webkit-transition: opacity 300ms;
+	transition: opacity 300ms;
 }
 
 ol {
@@ -1531,7 +1546,7 @@ table tbody tr.alt {
 }
 
 table th {
-	color: #000000;
+	color: #17211A;
 }
 
 table thead {
@@ -2465,7 +2480,7 @@ body.is-preload .banner.onload-image-fade-in .image img {
 }
 
 .banner .image {
-	background-color: rgba(0, 0, 0, 0.125);
+	background-color: rgba(23, 33, 26, 0.125);
 }
 
 .banner.invert .image {
@@ -3214,7 +3229,7 @@ body.is-preload .spotlight.onload-image-fade-in .image img {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	background-color: inherit;
+	background-color: rgba(255, 255, 255, 0.85);
 	position: relative;
 	overflow-x: hidden;
 	text-align: center;
@@ -3448,7 +3463,7 @@ body.is-preload .spotlight.onload-image-fade-in .image img {
 }
 
 .spotlight .image {
-	background-color: rgba(0, 0, 0, 0.125);
+	background-color: rgba(23, 33, 26, 0.125);
 }
 
 .spotlight.invert .image {
@@ -3854,7 +3869,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 }
 
 .gallery.style1 {
-	background-color: #000000;
+	background-color: #17211A;
 	color: #ffffff;
 	-moz-align-items: center;
 	-ms-align-items: center;
@@ -3959,7 +3974,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 	background-color: #ffffff;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	color: #000000 !important;
+	color: #17211A !important;
 }
 
 .gallery.style1 input[type="submit"].primary:hover,
@@ -4048,7 +4063,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(23, 33, 26, 0.5);
 	opacity: 0;
 	padding: 2rem;
 	z-index: 1;
@@ -4098,7 +4113,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 }
 
 .gallery.style2 {
-	background-color: #000000;
+	background-color: #17211A;
 	color: #ffffff;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -4191,7 +4206,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 	background-color: #ffffff;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	color: #000000 !important;
+	color: #17211A !important;
 }
 
 .gallery.style2 input[type="submit"].primary:hover,
@@ -4342,7 +4357,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(23, 33, 26, 0.5);
 	opacity: 0;
 	padding: 3rem;
 	z-index: 1;
@@ -4421,7 +4436,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 	width: 100%;
 	height: 100%;
 	outline: 0;
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: rgba(23, 33, 26, 0.75);
 	visibility: none;
 	opacity: 0;
 	z-index: 0;
@@ -4510,7 +4525,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 }
 
 .gallery article .image {
-	background-color: rgba(0, 0, 0, 0.125);
+	background-color: rgba(23, 33, 26, 0.125);
 }
 
 .wrapper.style1 > .inner {
@@ -4557,7 +4572,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 }
 
 #wrapper > .wrapper.style2.invert > .inner {
-	background-color: #000000;
+	background-color: #17211A;
 }
 
 .items.onload-fade-in > * > .inner {
@@ -4997,7 +5012,7 @@ body.is-preload .items.onload-fade-in > * > .inner {
 }
 
 #wrapper > .invert {
-	background-color: #000000;
+	background-color: #17211A;
 	color: #ffffff;
 }
 
@@ -5086,7 +5101,7 @@ body.is-preload .items.onload-fade-in > * > .inner {
 	background-color: #ffffff;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	color: #000000 !important;
+	color: #17211A !important;
 }
 
 #wrapper > .invert input[type="submit"].primary:hover,
@@ -5138,7 +5153,7 @@ body.is-preload .items.onload-fade-in > * > .inner {
 }
 
 #wrapper > .invert select option {
-	color: #000000;
+	color: #17211A;
 	background: #ffffff;
 }
 
@@ -5156,7 +5171,7 @@ body.is-preload .items.onload-fade-in > * > .inner {
 #wrapper > .invert input[type="radio"]:checked + label:before {
 	background-color: #ffffff;
 	border-color: #ffffff;
-	color: #000000;
+	color: #17211A;
 }
 
 #wrapper > .invert input[type="checkbox"]:focus + label:before,
