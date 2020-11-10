@@ -1,0 +1,297 @@
+$color1: #5b927d;
+$color2: #a8ae7e;
+$color3: #e7d5a4;
+$color4: #8e6444;
+
+@mixin easeOut {
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@mixin break {
+  @media screen and (max-width: 760px) {
+    @content;
+  }
+}
+
+.strips {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: white;
+
+  &__strip {
+    will-change: width, left, z-index, height;
+    position: absolute;
+    width: 25vw;
+    min-height: 100vh;
+    overflow: hidden;
+    cursor: pointer;
+    @include easeOut;
+
+    &:nth-child(1) {
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      left: 25vw;
+    }
+
+    &:nth-child(3) {
+      left: 50vw;
+    }
+
+    &:nth-child(4) {
+      left: 75vw;
+    }
+
+    &:nth-child(1) {
+      .strip__content {
+        background: $color1;
+        transform: translate3d(-100%, 0, 0);
+        animation-name: strip1;
+        animation-delay: 0.1s;
+      }
+    }
+
+    &:nth-child(2) {
+      .strip__content {
+        background: $color2;
+        transform: translate3d(0, 100%, 0);
+        animation-name: strip2;
+        animation-delay: 0.2s;
+      }
+    }
+
+    &:nth-child(3) {
+      .strip__content {
+        background: $color3;
+        transform: translate3d(0, -100%, 0);
+        animation-name: strip3;
+        animation-delay: 0.3s;
+      }
+    }
+
+    &:nth-child(4) {
+      .strip__content {
+        background: $color4;
+        transform: translate3d(0, 100%, 0);
+        animation-name: strip4;
+        animation-delay: 0.4s;
+      }
+    }
+
+    @include break {
+      min-height: 25vh;
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        top: 25vh;
+        left: 0;
+        width: 100%;
+      }
+
+      &:nth-child(3) {
+        top: 50vh;
+        left: 0;
+        width: 100%;
+      }
+
+      &:nth-child(4) {
+        top: 75vh;
+        left: 0;
+        width: 100%;
+      }
+
+    }
+  }
+
+  .strip__content {
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-fill-mode: both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.35em;
+    text-decoration: none;
+
+    &:hover {
+      &:before {
+        transform: skew(-30deg) scale(3) translate(0, 0);
+        opacity: 0.1;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 0.05;
+      transform-origin: center center;
+      transform: skew(-30deg) scaleY(1) translate(0, 0);
+      @include easeOut;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
+      color: #fff;
+    }
+
+    ul.alt li {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    @include break {
+      font-size: 1em;
+    }
+
+  }
+
+  .strip__inner-text {
+    will-change: transform, opacity;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    @include easeOut;
+
+    @include break {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__strip--expanded {
+    width: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 3;
+    cursor: default;
+
+    @include break {
+      min-height: 100vh;
+    }
+
+    .strip__content {
+      &:hover {
+        &:before {
+          transform: skew(-30deg) scale(1) translate(0, 0);
+          opacity: 0.05;
+        }
+      }
+    }
+
+    .strip__title {
+      opacity: 0;
+    }
+
+    .strip__inner-text {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.strip__title {
+  display: block;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  font-size: 3.5vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  @include easeOut;
+
+  @include break {
+    font-size: 28px;
+  }
+}
+
+.strip__close {
+  display: block;
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' zoomAndPan='disable'%3E%3Cstyle%3Eline %7Bstroke: %23ffffff%3Bstroke-width: 1.5px%3B%7D%3C/style%3E%3Cline x1='20' y1='20' x2='44' y2='44' /%3E%3Cline x1='20' y1='44' x2='44' y2='20' /%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 3rem;
+  right: 3vw;
+  top: 3vw;
+  opacity: 0;
+  z-index: 10;
+  @include easeOut;
+  transition-delay: 0.5s;
+
+  &--show {
+    opacity: 1;
+  }
+}
+
+@keyframes strip1 {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strip2 {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strip3 {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strip4 {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
