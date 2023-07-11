@@ -2433,7 +2433,7 @@ body.is-preload .banner.onload-image-fade-in .image img {
 	top: 0;
 	left: 0;
 	border-radius: 0;
-	opacity: 0.5;
+	opacity: 0.2;
 }
 
 .banner.style5 .image img {
@@ -4110,7 +4110,7 @@ body.is-preload .gallery.onload-fade-in article .image img {
 }
 
 .gallery.style1.big article {
-	width: 33.3333333333%;
+	width: 50%;
 }
 
 .gallery.style1.big article .caption {
